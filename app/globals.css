@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a; /* Глубокий черный как в референсе */
+  --foreground: #ffffff;
+  --accent: #fbbf24; /* Amber-400 (Золотой) */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Эффект свечения для карточек в стиле референса */
+.gold-gradient-border {
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  transition: all 0.3s ease;
+}
+
+.gold-gradient-border:hover {
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+}
+
+/* Стиль кнопок из brainrivals */
+.btn-primary {
+  @apply bg-amber-500 text-black font-bold py-3 px-8 rounded-full 
+         hover:bg-amber-400 transition-all duration-300 transform hover:scale-105;
+}
