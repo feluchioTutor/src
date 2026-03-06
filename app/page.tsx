@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero.tsx";
-import Steps from "../components/Steps.tsx";
-import Reviews from "../components/Reviews.tsx";
-import CTA from "../components/CTA.tsx";
+import Hero from "../components/Hero";
+import Steps from "../components/Steps";
+import Reviews from "../components/Reviews";
+import CTA from "../components/CTA";
 
 export default function Home() {
   return (
