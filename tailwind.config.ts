@@ -8,10 +8,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        amber: {
-          400: "#fbbf24",
-          500: "#f59e0b",
+        // Глубокий черный и премиальный золотой
+        black: "#050505",
+        gold: {
+          light: "#fde68a",
+          DEFAULT: "#fbbf24",
+          dark: "#b45309",
         },
+      },
+      backgroundImage: {
+        'gold-linear': "linear-gradient(to bottom, #fde68a, #fbbf24, #b45309)",
       },
     },
   },

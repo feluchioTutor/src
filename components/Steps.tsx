@@ -1,53 +1,28 @@
-import React from 'react';
-import { Smartphone, Target, PenTool, Layout } from 'lucide-react';
+import { Target, Zap, Globe, MessageSquare } from 'lucide-react';
 
 const steps = [
-  {
-    icon: <Target className="text-amber-500" size={32} />,
-    title: "Определение целей",
-    desc: "Анализируем ваш текущий уровень и подбираем программу под конкретные задачи."
-  },
-  {
-    icon: <Layout className="text-amber-500" size={32} />,
-    title: "Индивидуальный план",
-    desc: "Никаких скучных учебников. Только те материалы, которые интересны именно вам."
-  },
-  {
-    icon: <Smartphone className="text-amber-500" size={32} />,
-    title: "Онлайн-формат",
-    desc: "Занимайтесь из любой точки мира через удобную платформу с интерактивными досками."
-  },
-  {
-    icon: <PenTool className="text-amber-500" size={32} />,
-    title: "Постоянный фидбек",
-    desc: "Я всегда на связи в Telegram для проверки домашних заданий и быстрых ответов."
-  }
+  { icon: <Target />, title: "Цель", desc: "Фокусируемся на ваших задачах: от переезда до карьеры." },
+  { icon: <Zap />, title: "Драйв", desc: "Уроки, после которых хочется говорить, а не спать." },
+  { icon: <Globe />, title: "Локация", desc: "Занимайтесь из Алматы или любой точки мира онлайн." },
+  { icon: <MessageSquare />, title: "Связь", desc: "Личный куратор в Telegram 24/7 для ваших вопросов." }
 ];
 
 const Steps = () => {
   return (
-    <section id="lessons" className="py-24 px-6 bg-[#050505]">
+    <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-4">
-            Как мы будем <span className="text-amber-500 text-outline">работать</span>
-          </h2>
-          <div className="w-20 h-1 bg-amber-500 mx-auto" />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <div 
-              key={index} 
-              className="gold-gradient-border p-8 bg-black/40 rounded-2xl flex flex-col items-start"
-            >
-              <div className="mb-6 p-3 bg-amber-500/10 rounded-xl">
+        <h2 className="text-4xl md:text-6xl font-black uppercase mb-16 tracking-tighter">
+          Метод <span className="text-amber-500">обучения</span>
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, i) => (
+            <div key={i} className="premium-card p-10 group">
+              <div className="text-amber-500 mb-6 group-hover:scale-110 transition-transform duration-300">
                 {step.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                {step.desc}
-              </p>
+              <h3 className="text-2xl font-bold mb-4 uppercase italic">{step.title}</h3>
+              <p className="text-zinc-500 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

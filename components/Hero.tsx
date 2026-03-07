@@ -1,35 +1,39 @@
 "use client";
 import { motion } from "framer-motion";
-import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
-  const tgLink = "https://t.me/@feluchio123"; // ЗАМЕНИ НА СВОЙ НИК
+  const tgLink = "https://t.me/your_username";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full -z-10" />
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl w-full text-center space-y-8"
-      >
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase italic">
-          Elevate Your <br />
-          <span className="text-amber-500">English.</span>
-        </h1>
-        
-        <p className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto font-light leading-relaxed">
-          Индивидуальные уроки в Алматы и онлайн. Фокус на разговорную практику и ваши бизнес-цели.
-        </p>
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20">
+      {/* Фоновая аура */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] bg-[radial-gradient(circle_at_center,_rgba(251,191,36,0.05)_0%,_transparent_70%)] -z-10" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-          <a href={tgLink} target="_blank" className="btn-primary flex items-center gap-2 group">
-            Записаться в Telegram
-            <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center px-6 max-w-[1200px]"
+      >
+        <p className="text-gold font-bold tracking-[0.4em] uppercase text-sm mb-10">
+          Professional English Tutor
+        </p>
+        
+        <h1 className="text-display text-[12vw] md:text-[150px] mb-12">
+          Master <br />
+          <span className="gold-text">English.</span>
+        </h1>
+
+        <div className="max-w-2xl mx-auto mb-12">
+          <p className="text-zinc-500 text-xl md:text-2xl font-light leading-relaxed">
+            Индивидуальное обучение в Алматы и онлайн. <br />
+            Для тех, кто готов инвестировать в свой масштаб.
+          </p>
         </div>
+
+        <a href={tgLink} target="_blank" className="premium-btn inline-block">
+          Book a Lesson
+        </a>
       </motion.div>
     </section>
   );

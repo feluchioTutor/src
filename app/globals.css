@@ -3,31 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a0a0a; /* Глубокий черный как в референсе */
+  --background: #050505;
   --foreground: #ffffff;
-  --accent: #fbbf24; /* Amber-400 (Золотой) */
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  /* Убираем лишние просветы и добавляем четкость шрифту */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Эффект свечения для карточек в стиле референса */
-.gold-gradient-border {
-  border: 1px solid rgba(251, 191, 36, 0.2);
-  transition: all 0.3s ease;
+/* Эффект текста как на референсе */
+.text-display {
+  @apply font-black uppercase italic tracking-tighter leading-[0.85];
 }
 
-.gold-gradient-border:hover {
-  border-color: rgba(251, 191, 36, 0.6);
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.1);
+/* Градиентное золото для текста */
+.gold-text {
+  background: linear-gradient(to bottom, #fef3c7 0%, #fbbf24 50%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Стиль кнопок из brainrivals */
-.btn-primary {
-  @apply bg-amber-500 text-black font-bold py-3 px-8 rounded-full 
-         hover:bg-amber-400 transition-all duration-300 transform hover:scale-105;
+/* Кнопка с эффектом стекла и золота */
+.premium-btn {
+  @apply bg-gold text-black font-black uppercase italic px-12 py-6 rounded-full
+         hover:scale-105 hover:shadow-[0_0_40px_rgba(251,191,36,0.4)] 
+         transition-all duration-300 tracking-widest text-lg;
 }
